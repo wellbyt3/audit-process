@@ -5,6 +5,12 @@ When I was first getting into smart contract auditing, [watching Miletruck’s p
 
 Here’s what my audit process looks like now. I’m sharing it in case it helps other auditors who are learning. Whenever people drop tips about their process on Twitter, it’s been super helpful for me—so I figured I’d put mine out there too.
 
+**Table of Contents**:
+- [Mindsets](#mindsets)
+- [Setup](#setup)
+- [Entry Points](#entry-points)
+- [State Transition Doc](#state-transition-doc)
+
 ## Mindsets
 1. "Slow is smooth, smooth is fast."
 2. There's a difference between "knowing of" something versus understanding it.
@@ -22,14 +28,14 @@ Setup steps:
 - [ ] Create a new blank project in Whimsical
 - [ ] Clone the repo and compile
 
-## Entry Point Identification
+## Entry Points
 1. Open the codebase and the "Core Flows" document
 2. Write each contract that's in scope in the "Core Flows" document
 3. Run `forge inspect abi ContractName` on each contract and write down each `external` or `public` function.
 4. Organize contracts and functions into an order that makes intuitive sense (e.g. `Factory.sol` before `Pool.sol`; `deposit()` before `withdraw`). Doesn't need to be perfect. Easy to reorder as you learn the codebase.
 5. Paste the contracts and external / public functions into the "Project Tracker" document
 
-## State Transition Document Setup
+## State Transition Doc
 1. Run `forge inspect storageLayout ContractName` for each contract
 2. Add each storage variable to the "State Transitions" Google Sheet
 
