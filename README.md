@@ -10,6 +10,7 @@ Here’s what my audit process looks like now. I’m sharing it in case it helps
 - [Setup](#setup)
 - [Entry Points](#entry-points)
 - [State Transition Doc](#state-transition-doc)
+- .....work in progress
 
 ## Mindsets
 1. "Slow is smooth, smooth is fast."
