@@ -14,9 +14,9 @@ Here’s what my audit process looks like now. I’m sharing publicly in case it
 ## Part 1: Preparation & Setup
 
 ### Reminders
-Before I start an audit, I like to remind myself of things I've learned from previous audits. 
+Before I start an audit, I like to remind myself of what I've learned from previous audits. 
 
-Here's a list of those reminders:
+**Here are those reminders**:
 1. "Slow is smooth, smooth is fast." Don't ever rush.
 2. There's a difference between "knowing of" something versus understanding it. Be intellectually honest with yourself.
 3. Do NOT start a contest midway through unless you're 100% certain you'll be able to finish early. Being stressed about running out of time is damaging to performance.
