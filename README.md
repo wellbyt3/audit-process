@@ -53,7 +53,7 @@ Setup steps:
 
 ## Part 2: System Overview
 
-### Get a "Birds Eye View"
+### 1. Get a "Birds Eye View"
 The goal here is to understand _what_ the system is doing, but ignore any _how_ related details. 
 
 Using the "Core Flows" document:
@@ -69,7 +69,7 @@ If there are many contracts interacting, draw simple diagrams in Whimsical showi
 
 > **IMPORTANT**: Diagraming can be a form of procrastination. Beware! 
 
-### Fill in Knowledge Gaps
+### 2. Fill in Knowledge Gaps
 For me, understanding a codebase has to happen top-down. If I don’t know what it’s supposed to do or why it exists, the actual code won’t make much sense.
 
 By this point, I'll have flagged any concepts from the documentation or code that I’m not familiar with. Now is the time to fill in any of those knowledge gaps I have. For example, if a protocol implements call and put options and I don’t know how options work, I’ll researcher options.
@@ -78,7 +78,7 @@ Whenever I learn something new for an audit, it's important that the new knowled
 
 To lock in new concepts, I make flashcards in a spaced-repetition app called Mochi. Each morning, I review those cards so the new concepts are fresh and accessible.
 
-### Prepare a Testing Environment
+### 3. Prepare a Testing Environment
 I learn best by doing. When I’m manually reviewing code, it really helps to have a Foundry test file ready so I can play around with different parts of the code:
 - [ ] Create a Foundry test file called `wellbyt3-playground.t.sol` and setup a simple testing playground
 
@@ -98,7 +98,7 @@ With a high-level system overview loaded up, it's time to start the line by line
 2. When there's confusing math, convert the code to formulas on paper.
 3. When timelines exists, draw them on paper.
 
-### Happy Pass
+### 1. Happy Pass
 
 Open the "Audit Tracker" doc and being the manual review:
 - [ ] Review the constructor / initializers to understand state initialization
@@ -119,7 +119,7 @@ When you finish an entry point, go back through and:
 
 > **IMPORTANT**: During the first pass, focus on keeping a steady pace. Don’t let details or complexity break your rhythm. If something doesn’t click after a reasonable amount of time, tag it and move on. Easy to revisit it on the next pass.
 
-### Attacker Pass
+### 2. Attacker Pass
 Go through the code again, but shift mindsets from "happy path" to "attacker's mindest."
 
 Go through the code in the same order as before, but this time stop at anything tagged and follow those threads to completion. Sticking to the same order builds deeper context than just jumping around tags. During this pass, I usually come up with new questions and ideas—and instead of tagging them, I dig in until I’ve followed the thread all the way through.
