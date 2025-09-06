@@ -17,12 +17,12 @@ Here’s what my audit process looks like now. I’m sharing publicly in case it
 Before I start an audit, I like to remind myself of things I've learned from previous audits. 
 
 Here's a list of those reminders:
-    1. "Slow is smooth, smooth is fast." Don't ever rush.
-    2. There's a difference between "knowing of" something versus understanding it. Be intellectually honest with yourself.
-    3. Do NOT start a contest midway through unless you're 100% certain you'll be able to finish early. Being stressed about running out of time is damaging to performance.
-    6. Treat yourself like a professional athlete during contests. Consistent bedtime, eat clean, workout, etc.
-    7. Too much caffeine in the AM hurts producitvity in the mid term. It's not worth it.
-    8. Creativity usually comes during idle time. Make sure this idle time is built into each day.
+1. "Slow is smooth, smooth is fast." Don't ever rush.
+2. There's a difference between "knowing of" something versus understanding it. Be intellectually honest with yourself.
+3. Do NOT start a contest midway through unless you're 100% certain you'll be able to finish early. Being stressed about running out of time is damaging to performance.
+6. Treat yourself like a professional athlete during contests. Consistent bedtime, eat clean, workout, etc.
+7. Too much caffeine in the AM hurts producitvity in the mid term. It's not worth it.
+8. Creativity usually comes during idle time. Make sure this idle time is built into each day.
 
 ### Get Organized
 Spending 10 minutes to get organized at the start of an audit, saves many future hours.
@@ -94,9 +94,9 @@ The other factor is time. Setting up my own environment is great for understandi
 With a high-level system overview loaded up, it's time to start the line by line manual review.
 
 Here are some general tips for manually reviewing code:
-    1. Audit in layers, top-down
-    2. When there's a lot of math, convert the code to formulas on paper.
-    3. When timelines exists, draw them on paper.
+1. Audit in layers, top-down
+2. When there's confusing math, convert the code to formulas on paper.
+3. When timelines exists, draw them on paper.
 
 ### Happy Pass
 
