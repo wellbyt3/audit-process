@@ -13,7 +13,7 @@ Here’s what my audit process looks like now. I’m sharing publicly in case it
 
 ## Part 1: Preparation & Setup
 
-### Reminders
+### 1. Reminders
 Before I start an audit, I like to remind myself of what I've learned from previous audits. 
 
 **Here are those reminders**:
@@ -24,7 +24,7 @@ Before I start an audit, I like to remind myself of what I've learned from previ
 7. Too much caffeine in the AM hurts producitvity in the mid term. It's not worth it.
 8. Creativity usually comes during idle time. Build idle time into each audit day.
 
-### Get Organized
+### 2. Get Organized
 Spending 10 minutes to get organized at the start of an audit, saves many future hours.
 
 Setup steps:
@@ -35,17 +35,17 @@ Setup steps:
 - [ ] Create a new blank project in Whimsical
 - [ ] Clone the repo and compile
 
-### Scan the Docs and README
+### 3. Scan the Docs and README
 - [ ] Quickly scan the documentation and README. The goal is NOT total understanding. Just get a lay of the land.
 
-### Entry Points
+### 4. Entry Points
 - [ ] Open the codebase and the "Core Flows" document
 - [ ] Write each in-scope contract into the "Core Flows" doc
 - [ ] Run `forge inspect abi ContractName` and write down `external` and `public` state changing function.
 - [ ] Organize contracts and functions into an order that makes intuitive sense (e.g. `Factory.sol` before `Pool.sol`; `deposit()` before `withdraw`). Doesn't need to be perfect. Easy to reorder as you learn more.
 - [ ] Paste the contracts and functions into the "Audit Tracker" doc (for use later during manual review).
 
-### State Transition Doc
+### 5. State Transition Doc
 - [ ] Run `forge inspect storageLayout ContractName` for each contract.
 - [ ] Add each storage variable to the "State Transitions" Google Sheet.
 
