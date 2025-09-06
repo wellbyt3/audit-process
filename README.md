@@ -120,17 +120,16 @@ When you finish an entry point, go back through and:
 > **IMPORTANT**: During the first pass, focus on keeping a steady pace. Don’t let details or complexity break your rhythm. If something doesn’t click after a reasonable amount of time, tag it and move on. Easy to revisit it on the next pass.
 
 ### 2. Attacker Pass 😉
-Go through the code again, but shift mindsets from "happy path" to "attacker's mindest."
+Time to shift mindsets from "happy path" to "attacker's mindest."
 
-Go through the code in the same order as before, but this time stop at anything tagged and follow those threads to completion. Sticking to the same order builds deeper context than just jumping around tags. During this pass, I usually come up with new questions and ideas—and instead of tagging them, I dig in until I’ve followed the thread all the way through.
+Go through the code in the same order as before, but this time stop at anything tagged and follow those threads to completion. Sticking to the same order builds deeper context than just jumping around tags. During this pass, I usually come up with new questions and ideas. Instead of tagging them, dig in until the threads have been pulled on fully.
 
-Open the "Audit Tracker" doc and being the manual review:
+Open the "Audit Tracker" doc and begin the 2nd pass:
 - [ ] Review the constructor / initializers to understand state initialization
 - [ ] For each entry point, define input parameters. Make sure to go through all possible codepath variations.
 - [ ] Audit in layers
-- [ ] When you come across a tag, take whatever action is required
+- [ ] When you come across a tag, take whatever action is required (e.g. test, explore external integrations, etc.)
     - Write up all bugs as I come across them.
-
 
 ## Part 4: Bug Hunting 🐛
 By this point,
