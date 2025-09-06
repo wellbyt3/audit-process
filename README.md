@@ -83,10 +83,13 @@ I learn best by doing. When I’m manually reviewing code, it really helps to ha
 - [ ] Create a Foundry test file called `wellbyt3-playground.t.sol` and setup a simple testing playground
 
 Next, review the protocol's tests. Depending on what I see, either:
-- [ ] Plan on using the existing test suite for my own future tests, OR
+- [ ] Plan on using the existing test suite for my own future tests, **OR**
 - [ ] Setup my own testing environment.
 
-> A lot of this decision comes down to how much I trust the protocol’s test setup and how complex the deployment and state initialization are. If they’re using a bunch of mocks that strip away real complexity, I’ll usually spin up my own environment by forking the actual contracts they interact with. [This unique Medium from the Plaza Finance contest on Sherlock](https://github.com/sherlock-audit/2024-12-plaza-finance-judging/issues/835) is a good example — it could've been caught by just running a forked test. The other factor is time. Setting up my own environment is great for understanding how state gets initialized, but it can also eat up hours. If the deployment is too complex, it’s sometimes just not worth it.
+This decision comes down to the protocol’s tests and how complex their deployment is:
+- If the delpoyment is simple, I'll create my own testing environment because it's great for understanding.
+- If the protocol's test use mocks that strip away complexity, I’ll usually spin up my own environment and replace mocks with forked contracts. [This unique Medium from the Plaza Finance contest on Sherlock](https://github.com/sherlock-audit/2024-12-plaza-finance-judging/issues/835) could've been caught by just running a forked test.
+- If the deployment is very complex, it’s often not worth the time investment of setting up my own testing environment, so I'll use the protocols.
 
 ## Part 3: Manual Review 🔎
 With a high-level system overview loaded up in the 🧠 , it's time to start the line by line manual review.
