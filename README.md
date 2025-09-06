@@ -6,9 +6,9 @@ Here’s what my audit process looks like now. I’m sharing publicly in case it
 
 ## Table of Contents
 - [Part 1: Preparation & Setup](#mindsets)
-- [Setup](#setup)
-- [Entry Points](#entry-points)
-- [State Transition Doc](#state-transition-doc)
+    - [Setup](#setup)
+    - [Entry Points](#entry-points)
+    - [State Transition Doc](#state-transition-doc)
 - .....work in progress
 
 ## Part 1: Preparation & Setup
@@ -49,7 +49,7 @@ Setup steps:
 - [ ] Run `forge inspect storageLayout ContractName` for each contract
 - [ ] Add each storage variable to the "State Transitions" Google Sheet
 
-**Context**: I spent many years building models in Excel, so visualizing the state of storage variables in a spreadsheet helps me significantly. I thought I was the only one doing this, but then I learned [Phil is a big fan of Excel modeling](https://x.com/philbugcatcher/status/1909428628015788501) and Obront built a big spreadsheet model during his Story Protocol win. There are probably many more of us Excel dorks out there...
+**CONTEXT**: I spent many years building models in Excel, so visualizing the state of storage variables in a spreadsheet helps me significantly. I thought I was the only one doing this, but then I learned [Phil is a big fan of Excel modeling](https://x.com/philbugcatcher/status/1909428628015788501) and Obront built a big spreadsheet model during his Story Protocol win. There are probably many more of us Excel dorks out there...
 
 ## Part 2: System Overview
 
@@ -60,14 +60,14 @@ Using the "Core Flows" document:
 - [ ] For each contract, write 1-2 sentences explaining its purpose in the system.
 - [ ] For each entry point (function), write 1-2 sentences explaining it's purpose in the system. 
 
-**Important**: This is NOT a line-by-line pass through the code. I'm scanning for things like fund transfers and how the different contracts interact. The goal is to understand what the system is designed to do at a high-level.
+**IMPORTANT**: This is NOT a line-by-line pass through the code. I'm scanning for things like fund transfers and how the different contracts interact. The goal is to understand what the system is designed to do at a high-level.
 
 If there are many contracts interacting, draw simple diagrams in Whimsical showing the interactions:
 - [ ] How the different contracts interact
 - [ ] The actors
 - [ ] How funds move between actors and contract
 
-**Important**: Diagraming can be a form of procrastination. Beware! 
+**IMPORTANT**: Diagraming can be a form of procrastination. Beware! 
 
 ### Fill in Knowledge Gaps
 For me, understanding a codebase has to happen top-down. If I don’t know what it’s supposed to do or why it exists, the actual code won’t make much sense.
@@ -117,7 +117,7 @@ Open the "Audit Tracker" doc and being the manual review:
 When you finish with an entry point, go back through once again and:
 - [ ] Identify when state is updated. Log these state changes in the State Tracker Google Sheet.
 
-IMPORTANT: Focus on keeping a steady pace during this first pass. Don't allow complexity / details to disrupt the rhythm. Whenever something is confusing and I don't understand it within a reasonable amount of time, tag it with @audit-check to come back to on the next pass.
+**IMPORTANT**: During the first pass, focus on keeping a steady pace. Don’t let details or complexity break your rhythm. If something doesn’t click after a reasonable amount of time, tag it with @audit-check and move on—you can revisit it on the next pass.
 
 ### Attacker Pass
 Now that I've been through every line of code once, consciously make the shift from "happy path" mindset to an "attacker's mindset."
