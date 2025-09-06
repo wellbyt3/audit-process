@@ -117,7 +117,7 @@ Open the "Audit Tracker" doc and being the manual review:
 When you finish an entry point, go back through and:
 - [ ] Identify state updated. Log them in the State Tracker Google Sheet.
 
-**IMPORTANT**: During the first pass, focus on keeping a steady pace. Don’t let details or complexity break your rhythm. If something doesn’t click after a reasonable amount of time, tag it with @audit-check and move on—you can revisit it on the next pass.
+**IMPORTANT**: During the first pass, focus on keeping a steady pace. Don’t let details or complexity break your rhythm. If something doesn’t click after a reasonable amount of time, tag it and move on. Easy to revisit it on the next pass.
 
 ### Attacker Pass
 Go through the code again, but shift mindsets from "happy path" to "attacker's mindest."
