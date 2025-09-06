@@ -86,9 +86,7 @@ Next, review the protocol's tests. Depending on what I see, either:
 - [ ] Plan on using the existing test suite for my own future tests, OR
 - [ ] Setup my own testing environment.
 
-A lot of this decision comes down to how much I trust the protocol’s test setup and how complex the deployment and state initialization are. If they’re using a bunch of mocks that strip away real complexity, I’ll usually spin up my own environment by forking the actual contracts they interact with. [This unique Medium from the Plaza Finance contest on Sherlock](https://github.com/sherlock-audit/2024-12-plaza-finance-judging/issues/835) is a good example — it could've been caught by just running a forked test.
-
-The other factor is time. Setting up my own environment is great for understanding how state gets initialized, but it can also eat up hours. If the deployment is too complex, it’s sometimes just not worth it.
+> A lot of this decision comes down to how much I trust the protocol’s test setup and how complex the deployment and state initialization are. If they’re using a bunch of mocks that strip away real complexity, I’ll usually spin up my own environment by forking the actual contracts they interact with. [This unique Medium from the Plaza Finance contest on Sherlock](https://github.com/sherlock-audit/2024-12-plaza-finance-judging/issues/835) is a good example — it could've been caught by just running a forked test. The other factor is time. Setting up my own environment is great for understanding how state gets initialized, but it can also eat up hours. If the deployment is too complex, it’s sometimes just not worth it.
 
 ## Part 3: Manual Review 🔎
 With a high-level system overview loaded up in the 🧠 , it's time to start the line by line manual review.
