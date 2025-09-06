@@ -1,8 +1,8 @@
 # Audit Process
 
-When I was first getting into smart contract auditing, [watching Miletruck’s process](https://youtu.be/DySpPB3079k?si=2PON6jPrIIY_2pxa) was a game-changer. It gave me some structure around something that initially felt pretty opaque. I started by copying his approach, then tweaked it over time to fit my own style.
+When I was first learning smart contract auditing, [watching Miletruck’s process](https://youtu.be/DySpPB3079k?si=2PON6jPrIIY_2pxa) was a game-changer. It provided structure to something that initially felt opaque. I started by copying his approach, then tweaked it over time to fit my own style.
 
-Here’s what my audit process looks like now. I’m sharing publicly in case it helps other auditors. Whenever people drop tips about their process on Twitter, it’s been super helpful for me—so I figured I’d put mine out there too.
+Here’s what my audit process looks like now. I’m sharing publicly in case it helps other auditors. Enjoy!
 
 ## Table of Contents
 - [Part 1: Preparation & Setup](#mindsets)
@@ -93,7 +93,7 @@ The other factor is time. Setting up my own environment is great for understandi
 ## Part 3: Manual Review
 With a high-level system overview loaded up, it's time to start the line by line manual review.
 
-Here are some general tips for manually reviewing code:
+**Here are some general tips for manually reviewing code:**
 1. Audit in layers, top-down
 2. When there's confusing math, convert the code to formulas on paper.
 3. When timelines exists, draw them on paper.
@@ -104,7 +104,7 @@ Open the "Audit Tracker" doc and being the manual review:
 - [ ] Review the constructor / initializers to understand state initialization
 - [ ] Define all state variables. If any are non-intuitive, make flashcards for them.
 - [ ] For each entry point, define input parameters.
-    - Use the protocol's test to find "happy path" input params.
+    - Use the protocol's tests to find "happy path" input params.
     - When a function has many different code paths for different inputs, write them all down but only audit one path at a time.
 - [ ] Audit in layers.
 - [ ] Use the following tags:
@@ -114,22 +114,25 @@ Open the "Audit Tracker" doc and being the manual review:
     - `@test`: Use to tag portion of the code I want to test or fuzz later. If something takes less than 2 minutes to test, do it immediately.
     - `@complex`: Use to tag areas where bugs are likely more common. Examples include fees, thresholds, external integration, complex branch logic, etc.
 
-When you finish with an entry point, go back through once again and:
-- [ ] Identify when state is updated. Log these state changes in the State Tracker Google Sheet.
+When you finish an entry point, go back through and:
+- [ ] Identify state updated. Log them in the State Tracker Google Sheet.
 
 **IMPORTANT**: During the first pass, focus on keeping a steady pace. Don’t let details or complexity break your rhythm. If something doesn’t click after a reasonable amount of time, tag it with @audit-check and move on—you can revisit it on the next pass.
 
 ### Attacker Pass
-Now that I've been through every line of code once, consciously make the shift from "happy path" mindset to an "attacker's mindset."
+Go through the code again, but shift mindsets from "happy path" to "attacker's mindest."
 
-During this pass, approach it in the same order as the first pass, but this time stopping at anything that is tagged and following those threads to their completion. Going in the same order helps build deeper and deeper context into the codebase I've found versus just randomly going back to your tags and reviewing the ones you feel like reviewing. 
+Go through the code in the same order as before, but this time stop at anything tagged and follow those threads to completion. Sticking to the same order builds deeper context than just jumping around tags. During this pass, I usually come up with new questions and ideas—and instead of tagging them, I dig in until I’ve followed the thread all the way through.
 
-I'll usually come up with more questions and ideas during this pass. Instead of tagging for later, I'll follow the thread to its completion.
+Open the "Audit Tracker" doc and being the manual review:
+- [ ] Review the constructor / initializers to understand state initialization
+- [ ] For each entry point, define input parameters. Make sure to go through all possible codepath variations.
+- [ ] Audit in layers
+- [ ] When you come across a tag, take whatever action is required
+        -  Write up all bugs as I come across them.
 
-Now is also the time to test anything tagged with @test.
 
-When I come across a bug in this phase, I'll almost always write it up immediately.
-
-## Phase 3: Bug Hunting
+## Part 4: Bug Hunting
+By this point,
 
 ### Question Bank Review
