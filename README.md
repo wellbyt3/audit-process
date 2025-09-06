@@ -33,34 +33,34 @@ Before I start an audit, I like to remind myself of what I've learned from previ
 6. Treat yourself like a professional athlete during contests. Consistent bedtime, eat clean, workout, etc.
 7. Too much caffeine in the AM hurts producitvity. That second cup is not worth it.
 8. Creativity usually comes during idle time. Build idle time into each audit day.
-9. Don't try to do too much in your head. When things get complicated, rely on your tools (e.g. paper + pen, Foundry, spreadsheets, notes, etc.).
+9. Don't do too much in your head. When things get complicated, rely on your tools (e.g. paper + pen, Foundry, spreadsheets, notes, etc.).
 
 ### 2. Get Organized 📁
 Spending 10 minutes to get organized at the start of an audit, saves many future hours.
 
 Setup steps:
-- [ ] Create "Notes" document
-- [ ] Create "Core Flows" document
-- [ ] Create "Audit Tracker" document
-- [ ] Create "State Transitions" Google Sheet
+- [ ] Create `Notes` document
+- [ ] Create `Core Flows` document
+- [ ] Create `Audit Tracker` document
+- [ ] Create `State Transitions` Google Sheet
 - [ ] Create a new blank project in Whimsical
-- [ ] Clone the repo and compile
+- [ ] Clone and build the repo
 
 ### 3. Scan Documentation & README 👀
 - [ ] Quickly scan the documentation and README. The goal is NOT total understanding. Just get a lay of the land.
 
 ### 4. Entry Points ⬆️
-- [ ] Open the codebase and the "Core Flows" document
-- [ ] Write each in-scope contract into the "Core Flows" doc
+- [ ] Open the codebase and `Core Flows` document
+- [ ] Write each in-scope contract into `Core Flows`
 - [ ] Run `forge inspect abi ContractName` and write down `external` and `public` state changing function.
 - [ ] Organize contracts and functions into an order that makes intuitive sense (e.g. `Factory.sol` before `Pool.sol`; `deposit()` before `withdraw`). Doesn't need to be perfect. Easy to reorder as you learn more.
-- [ ] Paste the contracts and functions into the "Audit Tracker" doc (for use later during manual review).
+- [ ] Paste the contracts and functions into the `Audit Tracker` doc (for use later during manual review).
 
 ### 5. State Transition Doc ↪️
 - [ ] Run `forge inspect storageLayout ContractName` for each contract.
-- [ ] Add each storage variable to the "State Transitions" Google Sheet.
+- [ ] Add each storage variable to the `State Transitions` Google Sheet.
 
-> Visualizing storage variable state in a spreadsheet helps me a lot. I thought I was the only one doing this, but then I learned [Phil usees spreadsheets](https://x.com/philbugcatcher/status/1909428628015788501) and Obront tracked the state of storage variables when he won the Story Protocol contest.
+> Visualizing storage variable state in a spreadsheet helps me a lot. I thought I was the only one doing this, but then I learned [Phil usees spreadsheets](https://x.com/philbugcatcher/status/1909428628015788501) and many others.
 
 ## Part 2: System Overview 💡
 
@@ -71,9 +71,9 @@ Using the "Core Flows" document:
 - [ ] For each contract, write 1-2 sentences explaining its purpose in the system.
 - [ ] For each entry point (function), write 1-2 sentences explaining it's purpose in the system. 
 
-> **IMPORTANT**: This is NOT a line-by-line pass through the code. I'm scanning for things like fund transfers and how the different contracts interact. The goal is to understand what the system is designed to do at a high-level.
+> **IMPORTANT**: This is NOT a line-by-line pass through the code. Scan for things like fund transfers and how the different contracts interact. The goal is to understand what the system is designed to do at a high-level.
 
-If there are many contracts interacting, draw simple diagrams in Whimsical showing the interactions:
+If there are lots of contracts interacting, draw diagrams in Whimsical showing the interactions:
 - [ ] How the different contracts interact
 - [ ] The actors
 - [ ] How funds move between actors and contract
@@ -83,11 +83,11 @@ If there are many contracts interacting, draw simple diagrams in Whimsical showi
 ### 2. Fill in Knowledge Gaps 📚
 For me, understanding a codebase has to happen top-down. If I don’t know what it’s supposed to do or why it exists, the actual code won’t make much sense.
 
-By this point, I'll have flagged any concepts from the documentation or code that I’m not familiar with. Now is the time to fill in any of those knowledge gaps I have. For example, if a protocol implements call and put options and I don’t know how options work, I’ll researcher options.
+By this point, I'll have flagged any concepts from the documentation or code that I’m not familiar with. Now is the time to fill in any of those knowledge gaps I have. For example, if a protocol implements call and put options, but I don’t know how options work, I’ll researcher options.
 
-Whenever I learn something new for an audit, it's important that the new knowledge is accessible to me from memory. I don't want to have to look up concepts / definitions when I'm manually reviewing the code because it disrupts my flow, making me audit at a level lower than my potential.
+Whenever I learn something new for an audit, it's important that the new knowledge is accessible in memory. I don't want to have to look up concepts / definitions when I'm manually reviewing the code because it disrupts my flow, making me audit at a level lower than my potential.
 
-To lock in new concepts, I make flashcards in a spaced-repetition app called Mochi. Each morning, I review those cards so the new concepts are fresh and accessible.
+To lock in new concepts, I make flashcards in a spaced-repetition app called [Mochi](https://mochi.cards/). Each morning, I review those cards so the new concepts are fresh and accessible.
 
 ### 3. Prepare a Testing Environment 🧑‍💻
 I learn best by doing. When I’m manually reviewing code, it really helps to have a Foundry test file ready so I can play around with different parts of the code:
@@ -98,7 +98,7 @@ Next, review the protocol's tests. Depending on what I see, either:
 - [ ] Setup my own testing environment.
 
 This decision comes down to the protocol’s tests and how complex their deployment is:
-- If the delpoyment is simple, I'll create my own testing environment because it's great for understanding.
+- If the delpoyment is simple, I'll create my own testing environment because it helps me gain a deeper understanding of the system.
 - If the protocol's tests use mocks that strip away complexity, I’ll spin up my own environment and replace the mocks with forked contracts. [This unique Medium from the Plaza Finance contest on Sherlock](https://github.com/sherlock-audit/2024-12-plaza-finance-judging/issues/835) could've been caught by just running a forked test.
 - If the deployment is complex, it’s usually not worth setting up my own environment, so I’ll use the protocol’s.
 
@@ -116,7 +116,7 @@ With a high-level system overview loaded up in the 🧠 , it's time to start the
 Open the "Audit Tracker" doc and being the manual review:
 - [ ] Review the constructor / initializers to understand state initialization
 - [ ] Define all state variables. If any are non-intuitive, make flashcards for them.
-- [ ] For each entry point, define input parameters.
+- [ ] For each entry point, define input parameters. If any are non-intuitive, make flashcards for them.
     - Use the protocol's tests to find "happy path" input params.
     - When a function has many different code paths for different inputs, write them all down but only audit one path at a time.
 - [ ] Audit in layers.
@@ -128,24 +128,24 @@ Open the "Audit Tracker" doc and being the manual review:
     - `@complex`: Use to tag areas where bugs are likely more common. Examples include fees, thresholds, external integration, complex branch logic, etc.
 
 When you finish an entry point, go back through and:
-- [ ] Identify state updated. Log them in the State Tracker Google Sheet.
+- [ ] Identify state updates. Log them in the `State Tracker` Google Sheet.
 
 > **IMPORTANT**: During the first pass, focus on keeping a steady pace. Don’t let details or complexity break your rhythm. If something doesn’t click after a reasonable amount of time, tag it and move on. Easy to revisit it on the next pass.
 
 ### 2. Attacker Pass 😉
 Now that you've been through the code once, your mindset should naturally starts shifting toward an "attacker's mindest."
 
-Go through the code in the same order as before, but this time stop at anything tagged and follow those threads to completion. Sticking to the same order builds deeper context than just jumping around tags. If you come up with new questions and ideas, instead of tagging, dig into them until each threads have been pulled on fully.
+Go through the code in the same order as before, but this time stop at anything tagged and follow those threads to completion. Sticking to the same order builds deeper context than just jumping around tags. If you come up with new questions and ideas, instead of tagging, dig into them until each threads has been pulled on fully.
 
-Open the "Audit Tracker" doc and begin the 2nd pass:
+Open the `Audit Tracker` doc and begin the 2nd pass:
 - [ ] Review the constructor / initializers to understand state initialization
 - [ ] For each entry point, define input parameters. Make sure to go through all possible codepath variations.
 - [ ] Audit in layers
 - [ ] When you come across a tag, take whatever action is required (e.g. test, explore external integrations, etc.)
-    - Write up all bugs as I come across them.
+    - Write up all bugs as you come across them.
 
 ## Part 4: Bug Hunting 🐛
-By this point, you should understand all the intimate details of the protocol you're auditing. Time to hunt for bugs!
+By this point, you should understand all the intimate details of the protocol you're auditing. Time to hunt for those non-obvious bugs!
 
 - [ ] Anything tagged with @complex should really be scrutinized
 - [ ] Go through `Question Bank` doc
