@@ -4,16 +4,16 @@ When I was first learning smart contract auditing, [watching Miletruck’s proce
 
 Here’s what my audit process looks like now. I’m sharing publicly in case it helps other auditors. Enjoy!
 
-## Table of Contents
+## Table of Contents 📜
 - [Part 1: Preparation & Setup](#mindsets)
     - [Setup](#setup)
     - [Entry Points](#entry-points)
     - [State Transition Doc](#state-transition-doc)
 - .....work in progress
 
-## Part 1: Preparation & Setup
+## Part 1: Preparation & Setup ⚒️
 
-### 1. Reminders
+### 1. Reminders 🙌
 Before I start an audit, I like to remind myself of what I've learned from previous audits. 
 
 **Here are those reminders**:
@@ -24,7 +24,7 @@ Before I start an audit, I like to remind myself of what I've learned from previ
 7. Too much caffeine in the AM hurts producitvity in the mid term. It's not worth it.
 8. Creativity usually comes during idle time. Build idle time into each audit day.
 
-### 2. Get Organized
+### 2. Get Organized 📁
 Spending 10 minutes to get organized at the start of an audit, saves many future hours.
 
 Setup steps:
@@ -35,25 +35,25 @@ Setup steps:
 - [ ] Create a new blank project in Whimsical
 - [ ] Clone the repo and compile
 
-### 3. Scan the Docs and README
+### 3. Scan the Docs and README 👀
 - [ ] Quickly scan the documentation and README. The goal is NOT total understanding. Just get a lay of the land.
 
-### 4. Entry Points
+### 4. Entry Points ⬆️
 - [ ] Open the codebase and the "Core Flows" document
 - [ ] Write each in-scope contract into the "Core Flows" doc
 - [ ] Run `forge inspect abi ContractName` and write down `external` and `public` state changing function.
 - [ ] Organize contracts and functions into an order that makes intuitive sense (e.g. `Factory.sol` before `Pool.sol`; `deposit()` before `withdraw`). Doesn't need to be perfect. Easy to reorder as you learn more.
 - [ ] Paste the contracts and functions into the "Audit Tracker" doc (for use later during manual review).
 
-### 5. State Transition Doc
+### 5. State Transition Doc ↪️
 - [ ] Run `forge inspect storageLayout ContractName` for each contract.
 - [ ] Add each storage variable to the "State Transitions" Google Sheet.
 
 > Visualizing storage variable state in a spreadsheet helps me a lot. I thought I was the only one doing this, but then I learned [Phil usees spreadsheets](https://x.com/philbugcatcher/status/1909428628015788501) and Obront tracked the state of storage variables when he won the Story Protocol contest.
 
-## Part 2: System Overview
+## Part 2: System Overview 💡
 
-### 1. Get a "Birds Eye View"
+### 1. Get a "Birds Eye View" 🦉
 The goal here is to understand _what_ the system is doing, but ignore any _how_ related details. 
 
 Using the "Core Flows" document:
@@ -69,7 +69,7 @@ If there are many contracts interacting, draw simple diagrams in Whimsical showi
 
 > **IMPORTANT**: Diagraming can be a form of procrastination. Beware! 
 
-### 2. Fill in Knowledge Gaps
+### 2. Fill in Knowledge Gaps 📚
 For me, understanding a codebase has to happen top-down. If I don’t know what it’s supposed to do or why it exists, the actual code won’t make much sense.
 
 By this point, I'll have flagged any concepts from the documentation or code that I’m not familiar with. Now is the time to fill in any of those knowledge gaps I have. For example, if a protocol implements call and put options and I don’t know how options work, I’ll researcher options.
@@ -78,7 +78,7 @@ Whenever I learn something new for an audit, it's important that the new knowled
 
 To lock in new concepts, I make flashcards in a spaced-repetition app called Mochi. Each morning, I review those cards so the new concepts are fresh and accessible.
 
-### 3. Prepare a Testing Environment
+### 3. Prepare a Testing Environment 🧑‍💻
 I learn best by doing. When I’m manually reviewing code, it really helps to have a Foundry test file ready so I can play around with different parts of the code:
 - [ ] Create a Foundry test file called `wellbyt3-playground.t.sol` and setup a simple testing playground
 
@@ -90,15 +90,15 @@ A lot of this decision comes down to how much I trust the protocol’s test setu
 
 The other factor is time. Setting up my own environment is great for understanding how state gets initialized, but it can also eat up hours. If the deployment is too complex, it’s sometimes just not worth it.
 
-## Part 3: Manual Review
-With a high-level system overview loaded up, it's time to start the line by line manual review.
+## Part 3: Manual Review 🔎
+With a high-level system overview loaded up in the 🧠 , it's time to start the line by line manual review.
 
 **Here are some general tips for manually reviewing code:**
 1. Audit in layers, top-down
 2. When there's confusing math, convert the code to formulas on paper.
 3. When timelines exists, draw them on paper.
 
-### 1. Happy Pass
+### 1. Happy Pass 😃
 
 Open the "Audit Tracker" doc and being the manual review:
 - [ ] Review the constructor / initializers to understand state initialization
@@ -119,7 +119,7 @@ When you finish an entry point, go back through and:
 
 > **IMPORTANT**: During the first pass, focus on keeping a steady pace. Don’t let details or complexity break your rhythm. If something doesn’t click after a reasonable amount of time, tag it and move on. Easy to revisit it on the next pass.
 
-### 2. Attacker Pass
+### 2. Attacker Pass 😉
 Go through the code again, but shift mindsets from "happy path" to "attacker's mindest."
 
 Go through the code in the same order as before, but this time stop at anything tagged and follow those threads to completion. Sticking to the same order builds deeper context than just jumping around tags. During this pass, I usually come up with new questions and ideas—and instead of tagging them, I dig in until I’ve followed the thread all the way through.
@@ -132,7 +132,7 @@ Open the "Audit Tracker" doc and being the manual review:
     - Write up all bugs as I come across them.
 
 
-## Part 4: Bug Hunting
+## Part 4: Bug Hunting 🐛
 By this point,
 
 ### Question Bank Review
