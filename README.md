@@ -17,12 +17,12 @@ Here’s what my audit process looks like now. I’m sharing publicly in case it
 Before I start an audit, I like to remind myself of things I've learned from previous audits. 
 
 Here's a list of those reminders:
-1. "Slow is smooth, smooth is fast." Don't ever rush.
-2. There's a difference between "knowing of" something versus understanding it. Be intellectually honest with yourself.
-3. Do NOT start a contest midway through unless you're 100% certain you'll be able to finish early. Being stressed about running out of time is damaging to performance.
-6. Treat yourself like a professional athlete during contests. Consistent bedtime, eat clean, workout, etc.
-7. Too much caffeine in the AM hurts producitvity in the mid term. It's not worth it.
-8. Creativity usually comes during idle time. Make sure this idle time is built into each day.
+    1. "Slow is smooth, smooth is fast." Don't ever rush.
+    2. There's a difference between "knowing of" something versus understanding it. Be intellectually honest with yourself.
+    3. Do NOT start a contest midway through unless you're 100% certain you'll be able to finish early. Being stressed about running out of time is damaging to performance.
+    6. Treat yourself like a professional athlete during contests. Consistent bedtime, eat clean, workout, etc.
+    7. Too much caffeine in the AM hurts producitvity in the mid term. It's not worth it.
+    8. Creativity usually comes during idle time. Make sure this idle time is built into each day.
 
 ### Get Organized
 Spending 10 minutes to get organized at the start of an audit, saves many future hours.
@@ -91,7 +91,12 @@ A lot of this decision comes down to how much I trust the protocol’s test setu
 The other factor is time. Setting up my own environment is great for understanding how state gets initialized, but it can also eat up hours. If the deployment is too complex, it’s sometimes just not worth it.
 
 ## Part 3: Manual Review
-Now that I've got a high-level overview of the system, I know how I'm going to want to approach the first pass of my manual review.
+With a high-level system overview loaded up, it's time to start the line by line manual review.
+
+Here are some general tips for manually reviewing code:
+    1. Audit in layers, top-down
+    2. When there's a lot of math, convert the code to formulas on paper.
+    3. When timelines exists, draw them on paper.
 
 ### Happy Pass
 
@@ -108,12 +113,9 @@ Open the "Audit Tracker" doc and being the manual review:
     - `@audit-info`: Use to tag important context about the code that I want to remember for future passes.
     - `@test`: Use to tag portion of the code I want to test or fuzz later. If something takes less than 2 minutes to test, do it immediately.
     - `@complex`: Use to tag areas where bugs are likely more common. Examples include fees, thresholds, external integration, complex branch logic, etc.
-- When a function has logic to handle many different inputs, pick an input, then go through the function only thinking about that input. Repeat this for every input. Notate each variation of input in the "Audit Tracker" first, then go through each one by one.
-- Once I finish going through an entry point, go back through, but only identifying when state is updated. Log these state updates in the state tracker so I can visually see how state is changing.
 
-Some situational approaches I've found helpful:
-- When there's a lot of math, convert the code to formulas on paper.
-- When timelines exists, draw them on paper.
+When you finish with an entry point, go back through once again and:
+- [ ] Identify when state is updated. Log these state changes in the State Tracker Google Sheet.
 
 IMPORTANT: Focus on keeping a steady pace during this first pass. Don't allow complexity / details to disrupt the rhythm. Whenever something is confusing and I don't understand it within a reasonable amount of time, tag it with @audit-check to come back to on the next pass.
 
