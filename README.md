@@ -152,4 +152,4 @@ By this point, you should understand all the intimate details of the protocol yo
     - "Singular mindset." Focus on one critical state variable and look where it's updated.
     - "It's be really bad if X happened." Can I prove it's impossible?
 
-> **CONTEXT**: My question bank was [inspired by Zach's](https://youtu.be/57V-57ZXmfA?si=7ZhPp3tsGUfiQkFg&t=1371). I make sure to add to it whenver I finish and audit and go through the findings I missed.
+> **CONTEXT**: My question bank was [inspired by Zach's](https://youtu.be/57V-57ZXmfA?si=7ZhPp3tsGUfiQkFg&t=1371). Whenever I finish an audit and learn what I missed, I add to it.
