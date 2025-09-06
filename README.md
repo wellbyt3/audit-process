@@ -49,7 +49,7 @@ Setup steps:
 - [ ] Run `forge inspect storageLayout ContractName` for each contract.
 - [ ] Add each storage variable to the "State Transitions" Google Sheet.
 
-> **CONTEXT**: I spent many years building models in Excel, so visualizing the state of storage variables in a spreadsheet helps me significantly. I thought I was the only one doing this, but then I learned [Phil is a big fan of Excel modeling](https://x.com/philbugcatcher/status/1909428628015788501) and Obront built a big spreadsheet model during his Story Protocol win.
+> Visualizing storage variable state in a spreadsheet helps me a lot. I thought I was the only one doing this, but then I learned [Phil usees spreadsheets](https://x.com/philbugcatcher/status/1909428628015788501) and Obront tracked the state of storage variables when he won the Story Protocol contest.
 
 ## Part 2: System Overview
 
