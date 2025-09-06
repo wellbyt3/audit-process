@@ -129,7 +129,7 @@ Open the "Audit Tracker" doc and being the manual review:
 - [ ] For each entry point, define input parameters. Make sure to go through all possible codepath variations.
 - [ ] Audit in layers
 - [ ] When you come across a tag, take whatever action is required
-        -  Write up all bugs as I come across them.
+    - Write up all bugs as I come across them.
 
 
 ## Part 4: Bug Hunting
