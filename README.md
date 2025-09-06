@@ -129,6 +129,7 @@ Open the "Audit Tracker" doc and being the manual review:
 
 When you finish an entry point, go back through and:
 - [ ] Identify state updates. Log them in the `State Tracker` Google Sheet.
+- [ ] Review state update and ask, "Should this state variable have been updated?"
 
 > **IMPORTANT**: During the first pass, focus on keeping a steady pace. Don’t let details or complexity break your rhythm. If something doesn’t click after a reasonable amount of time, tag it and move on. Easy to revisit it on the next pass.
 
