@@ -64,9 +64,9 @@ Using the "Core Flows" document:
 **Important**: This is NOT a line-by-line pass through the code. I'm scanning for things like fund transfers and how the different contracts interact. The goal is to understand what the system is designed to do at a high-level.
 
 If there are many contracts interacting, draw simple diagrams in Whimsical showing the interactions:
-1. How the different contracts interact
-2. The actors
-3. How funds move between actors and contract
+- [ ] How the different contracts interact
+- [ ] The actors
+- [ ] How funds move between actors and contract
 
 **Important**: Diagraming can be a form of procrastination. Beware! 
 
