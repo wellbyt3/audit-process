@@ -18,11 +18,11 @@ Before I start an audit, I like to remind myself of what I've learned from previ
 
 **Here are those reminders**:
 1. "Slow is smooth, smooth is fast." Don't ever rush.
-2. There's a difference between "knowing of" something versus understanding it. Be intellectually honest with yourself.
-3. Do NOT start a contest midway through unless you're 100% certain you'll be able to finish early. Being stressed about running out of time is damaging to performance.
+2. There's a difference between _knowing of_ something versus _understanding_ it. Be intellectually honest with yourself.
+3. Do NOT start a contest midway through unless you're 100% certain you'll be able to finish early.
 6. Treat yourself like a professional athlete during contests. Consistent bedtime, eat clean, workout, etc.
 7. Too much caffeine in the AM hurts producitvity in the mid term. It's not worth it.
-8. Creativity usually comes during idle time. Make sure this idle time is built into each day.
+8. Creativity usually comes during idle time. Build idle time into each audit day.
 
 ### Get Organized
 Spending 10 minutes to get organized at the start of an audit, saves many future hours.
