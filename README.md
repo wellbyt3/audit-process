@@ -3,7 +3,7 @@
 ## Intro
 When I was first getting into smart contract auditing, [watching Miletruck’s process](https://youtu.be/DySpPB3079k?si=2PON6jPrIIY_2pxa) was a game-changer. It gave me some structure around something that initially felt pretty opaque. I started by copying his approach, then tweaked it over time to fit my own style.
 
-Here’s what my audit process looks like now. I’m sharing it in case it helps other auditors who are learning. Whenever people drop tips about their process on Twitter, it’s been super helpful for me—so I figured I’d put mine out there too.
+Here’s what my audit process looks like now. I’m sharing publicly in case it helps other auditors. Whenever people drop tips about their process on Twitter, it’s been super helpful for me—so I figured I’d put mine out there too.
 
 **Table of Contents**:
 - [Mindsets](#mindsets)
@@ -31,20 +31,20 @@ Spending 10 minutes to get organized at the start of an audit, saves many future
 Setup steps:
 - [ ] Create "Notes" document
 - [ ] Create "Core Flows" document
-- [ ] Create "Project Tracker" document
+- [ ] Create "Audit Tracker" document
 - [ ] Create "State Transitions" Google Sheet
 - [ ] Create a new blank project in Whimsical
 - [ ] Clone the repo and compile
 
 ### Scan the Docs and README
-- [ ] Quickly scan the documentation and README to get a sense of what the system is implementing. The goal here is NOT total understanding. It's just to get a lay of the land.
+- [ ] Quickly scan the documentation and README. The goal is NOT total understanding. Just get a lay of the land.
 
 ### Entry Points
 - [ ] Open the codebase and the "Core Flows" document
-- [ ] Write each contract that's in scope in the "Core Flows" document
+- [ ] Write each in-scope contract into the "Core Flows" doc
 - [ ] Run `forge inspect abi ContractName` and write down `external` and `public` state changing function.
 - [ ] Organize contracts and functions into an order that makes intuitive sense (e.g. `Factory.sol` before `Pool.sol`; `deposit()` before `withdraw`). Doesn't need to be perfect. Easy to reorder as you learn more.
-- [ ] Paste the contracts and functions into the "Project Tracker" document (use during manual review).
+- [ ] Paste the contracts and functions into the "Audit Tracker" doc. Use this later during manual review.
 
 ### State Transition Doc
 - [ ] Run `forge inspect storageLayout ContractName` for each contract
@@ -96,12 +96,12 @@ The other factor is time. Setting up my own environment is great for understandi
 ### Happy Pass
 Now that I've got a high-level overview of the system, I know how I'm going to want to approach the first pass of my manual review.
 
-Open the "Project Tracker" document and being manually reviewing each contract and entry point. 
+Open the "Audit Tracker" document and being manually reviewing each contract and entry point. 
 
 Notes:
 -Always review the constructor / initializers first so I know how state is initialized
 - For each entry point, make sure to define what input parameter looks like. Use the protocol's test to find the "happy path" input values.
-- Audit in layers, making sure to write each internal / external call in the project tracker to avoid distraction (create a document showing how to actual do this with some examples).
+- Audit in layers, making sure to write each internal / external call in the Audit Tracker to avoid distraction (create a document showing how to actual do this with some examples).
 - Use the following tags:
   - @audit-issue when I find a bug
   - @audit-check when there's some action item / task I'm assigning myself (e.g. attack ideas, questions I need to answer, etc.)
@@ -109,7 +109,7 @@ Notes:
   - @test when I want to test something in the playground or testing environment that will take longer than a minute or two to test.
   - @complex when I notice an area where there's a lot of complexity that is likely to contain bugs. I'll usually tag external integrations as @complex as well.
 - When there are many state variables tracking lots of different things or state variables that are unintuitive, memorizing what they represent really helps as you get deeper into a codebase. Once I learn what a state variables represents, add the definition to the "Notes" document and then at the end of the day, create spaced repetition flashcards.
-- When a function has logic to handle many different inputs, pick an input, then go through the function only thinking about that input. Repeat this for every input. Notate each variation of input in the "Project Tracker" first, then go through each one by one.
+- When a function has logic to handle many different inputs, pick an input, then go through the function only thinking about that input. Repeat this for every input. Notate each variation of input in the "Audit Tracker" first, then go through each one by one.
 - Once I finish going through an entry point, go back through, but only identifying when state is updated. Log these state updates in the state tracker so I can visually see how state is changing.
 
 Some situational approaches I've found helpful:
