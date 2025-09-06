@@ -43,11 +43,11 @@ Setup steps:
 - [ ] Write each in-scope contract into the "Core Flows" doc
 - [ ] Run `forge inspect abi ContractName` and write down `external` and `public` state changing function.
 - [ ] Organize contracts and functions into an order that makes intuitive sense (e.g. `Factory.sol` before `Pool.sol`; `deposit()` before `withdraw`). Doesn't need to be perfect. Easy to reorder as you learn more.
-- [ ] Paste the contracts and functions into the "Audit Tracker" doc. Use this later during manual review.
+- [ ] Paste the contracts and functions into the "Audit Tracker" doc (for use later during manual review).
 
 ### State Transition Doc
-- [ ] Run `forge inspect storageLayout ContractName` for each contract
-- [ ] Add each storage variable to the "State Transitions" Google Sheet
+- [ ] Run `forge inspect storageLayout ContractName` for each contract.
+- [ ] Add each storage variable to the "State Transitions" Google Sheet.
 
 > **CONTEXT**: I spent many years building models in Excel, so visualizing the state of storage variables in a spreadsheet helps me significantly. I thought I was the only one doing this, but then I learned [Phil is a big fan of Excel modeling](https://x.com/philbugcatcher/status/1909428628015788501) and Obront built a big spreadsheet model during his Story Protocol win.
 
