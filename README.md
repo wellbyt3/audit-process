@@ -54,7 +54,7 @@ Setup steps:
 ## Part 2: System Overview
 
 ### Get a "Birds Eye View"
-The goal here is to understand "what" the system is doing, but ignore any "how" related details. Open the codebase, protocol documentation, "Core Flows" document, and Whimsical.
+The goal here is to understand _what_ the system is doing, but ignore any _how_ related details. 
 
 Using the "Core Flows" document:
 - [ ] For each contract, write 1-2 sentences explaining its purpose in the system.
