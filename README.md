@@ -8,10 +8,17 @@ Here’s what my audit process looks like now. I’m sharing publicly in case it
 - [Part 1: Preparation & Setup](#part-1-preparation--setup-%EF%B8%8F)
     - [Reminders](#1-reminders-)
     - [Get Organized](#2-get-organized-)
-    - [Scan Documentation & README](#3-scan-the-docs-and-readme-)
-- [Part 2: System Overview](#mindsets)
-- [Part 3: Manual Review](#mindsets)
-- [Part 4: Bug Hunting](#mindsets)
+    - [Scan Documentation & README](#3-scan-documentation--readme-)
+    - [Entry Points](#4-entry-points-%EF%B8%8F)
+    - [State Transition Doc](#5-state-transition-doc-%EF%B8%8F)
+- [Part 2: System Overview](#part-2-system-overview-)
+    - [Get a "Birds Eye View"](#1-get-a-birds-eye-view-)
+    - [Fill in Knowledge Gaps](#2-fill-in-knowledge-gaps-)
+    - [Prepare a Testing Environment](#3-prepare-a-testing-environment-)
+- [Part 3: Manual Review](#part-3-manual-review-)
+    - [Happy Pass](#1-happy-pass-)
+    - [Attacker Pass](#2-attacker-pass-)
+- [Part 4: Bug Hunting](#part-4-bug-hunting-)
 
 
 ## Part 1: Preparation & Setup ⚒️
