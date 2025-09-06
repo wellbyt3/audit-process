@@ -1,6 +1,6 @@
 # Audit Process
 
-When I was first learning smart contract auditing, [watching Miletruck’s process](https://youtu.be/DySpPB3079k?si=2PON6jPrIIY_2pxa) was a game-changer. It provided structure to something that initially felt opaque. I started by copying his approach, then tweaked it over time to fit my own style.
+When I was first learning smart contract auditing, [watching Miletruck’s process](https://youtu.be/DySpPB3079k?si=2PON6jPrIIY_2pxa) was a game-changer. It provided structure to something that felt opaque. I started by copying his approach, then tweaked it over time to fit my own style.
 
 Here’s what my audit process looks like now. I’m sharing publicly in case it helps other auditors. Enjoy!
 
