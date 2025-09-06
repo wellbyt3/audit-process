@@ -88,8 +88,8 @@ Next, review the protocol's tests. Depending on what I see, either:
 
 This decision comes down to the protocol’s tests and how complex their deployment is:
 - If the delpoyment is simple, I'll create my own testing environment because it's great for understanding.
-- If the protocol's test use mocks that strip away complexity, I’ll usually spin up my own environment and replace mocks with forked contracts. [This unique Medium from the Plaza Finance contest on Sherlock](https://github.com/sherlock-audit/2024-12-plaza-finance-judging/issues/835) could've been caught by just running a forked test.
-- If the deployment is very complex, it’s often not worth the time investment of setting up my own testing environment, so I'll use the protocols.
+- If the protocol's tests use mocks that strip away complexity, I’ll spin up my own environment and replace the mocks with forked contracts. [This unique Medium from the Plaza Finance contest on Sherlock](https://github.com/sherlock-audit/2024-12-plaza-finance-judging/issues/835) could've been caught by just running a forked test.
+- If the deployment is complex, it’s usually not worth setting up my own environment, so I’ll use the protocol’s.
 
 ## Part 3: Manual Review 🔎
 With a high-level system overview loaded up in the 🧠 , it's time to start the line by line manual review.
@@ -98,6 +98,7 @@ With a high-level system overview loaded up in the 🧠 , it's time to start the
 1. Audit in layers, top-down
 2. When there's confusing math, convert the code to formulas on paper.
 3. When timelines exists, draw them on paper.
+4. If a function has logic to handle different inputs, pick an input, then go through the function thinking only about that input. Repeat this for every input.
 
 ### 1. Happy Pass 😃
 
@@ -121,9 +122,9 @@ When you finish an entry point, go back through and:
 > **IMPORTANT**: During the first pass, focus on keeping a steady pace. Don’t let details or complexity break your rhythm. If something doesn’t click after a reasonable amount of time, tag it and move on. Easy to revisit it on the next pass.
 
 ### 2. Attacker Pass 😉
-Time to shift mindsets from "happy path" to "attacker's mindest."
+Now that you've been through the code once, your mindset should naturally starts shifting toward an "attacker's mindest."
 
-Go through the code in the same order as before, but this time stop at anything tagged and follow those threads to completion. Sticking to the same order builds deeper context than just jumping around tags. During this pass, I usually come up with new questions and ideas. Instead of tagging them, dig in until the threads have been pulled on fully.
+Go through the code in the same order as before, but this time stop at anything tagged and follow those threads to completion. Sticking to the same order builds deeper context than just jumping around tags. If you come up with new questions and ideas, instead of tagging, dig into them until each threads have been pulled on fully.
 
 Open the "Audit Tracker" doc and begin the 2nd pass:
 - [ ] Review the constructor / initializers to understand state initialization
@@ -133,6 +134,12 @@ Open the "Audit Tracker" doc and begin the 2nd pass:
     - Write up all bugs as I come across them.
 
 ## Part 4: Bug Hunting 🐛
-By this point,
+By this point, you should understand all the intimate details of the protocol you're auditing. Time to hunt for bugs!
 
-### Question Bank Review
+- [ ] Anything tagged with @complex should really be scrutinized
+- [ ] Go through `Question Bank` doc
+- [ ] Try on [different Auditing Mindsets](https://www.youtube.com/watch?v=kORcOhftwVw)
+    - "Singular mindset." Focus on one critical state variable and look where it's updated.
+    - "It's be really bad if X happened." Can I prove it's impossible?
+
+> **CONTEXT**: My question bank was [inspired by Zach's](https://youtu.be/57V-57ZXmfA?si=7ZhPp3tsGUfiQkFg&t=1371). I make sure to add to it whenver I finish and audit and go through the findings I missed.
