@@ -49,7 +49,7 @@ Setup steps:
 - [ ] Run `forge inspect storageLayout ContractName` for each contract
 - [ ] Add each storage variable to the "State Transitions" Google Sheet
 
-**CONTEXT**: I spent many years building models in Excel, so visualizing the state of storage variables in a spreadsheet helps me significantly. I thought I was the only one doing this, but then I learned [Phil is a big fan of Excel modeling](https://x.com/philbugcatcher/status/1909428628015788501) and Obront built a big spreadsheet model during his Story Protocol win. There are probably many more of us Excel dorks out there...
+> **CONTEXT**: I spent many years building models in Excel, so visualizing the state of storage variables in a spreadsheet helps me significantly. I thought I was the only one doing this, but then I learned [Phil is a big fan of Excel modeling](https://x.com/philbugcatcher/status/1909428628015788501) and Obront built a big spreadsheet model during his Story Protocol win.
 
 ## Part 2: System Overview
 
@@ -60,14 +60,14 @@ Using the "Core Flows" document:
 - [ ] For each contract, write 1-2 sentences explaining its purpose in the system.
 - [ ] For each entry point (function), write 1-2 sentences explaining it's purpose in the system. 
 
-**IMPORTANT**: This is NOT a line-by-line pass through the code. I'm scanning for things like fund transfers and how the different contracts interact. The goal is to understand what the system is designed to do at a high-level.
+> **IMPORTANT**: This is NOT a line-by-line pass through the code. I'm scanning for things like fund transfers and how the different contracts interact. The goal is to understand what the system is designed to do at a high-level.
 
 If there are many contracts interacting, draw simple diagrams in Whimsical showing the interactions:
 - [ ] How the different contracts interact
 - [ ] The actors
 - [ ] How funds move between actors and contract
 
-**IMPORTANT**: Diagraming can be a form of procrastination. Beware! 
+> **IMPORTANT**: Diagraming can be a form of procrastination. Beware! 
 
 ### Fill in Knowledge Gaps
 For me, understanding a codebase has to happen top-down. If I don’t know what it’s supposed to do or why it exists, the actual code won’t make much sense.
@@ -117,7 +117,7 @@ Open the "Audit Tracker" doc and being the manual review:
 When you finish an entry point, go back through and:
 - [ ] Identify state updated. Log them in the State Tracker Google Sheet.
 
-**IMPORTANT**: During the first pass, focus on keeping a steady pace. Don’t let details or complexity break your rhythm. If something doesn’t click after a reasonable amount of time, tag it and move on. Easy to revisit it on the next pass.
+> **IMPORTANT**: During the first pass, focus on keeping a steady pace. Don’t let details or complexity break your rhythm. If something doesn’t click after a reasonable amount of time, tag it and move on. Easy to revisit it on the next pass.
 
 ### Attacker Pass
 Go through the code again, but shift mindsets from "happy path" to "attacker's mindest."
