@@ -9,7 +9,10 @@ Here’s what my audit process looks like now. I’m sharing publicly in case it
     - [Setup](#setup)
     - [Entry Points](#entry-points)
     - [State Transition Doc](#state-transition-doc)
-- .....work in progress
+- [Part 2: System Overview](#mindsets)
+- [Part 3: Manual Review](#mindsets)
+- [Part 4: Bug Hunting](#mindsets)
+
 
 ## Part 1: Preparation & Setup ⚒️
 
