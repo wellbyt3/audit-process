@@ -5,10 +5,10 @@ When I was first learning smart contract auditing, [watching Miletruck’s proce
 Here’s what my audit process looks like now. I’m sharing publicly in case it helps other auditors. Enjoy!
 
 ## Table of Contents 📜
-- [Part 1: Preparation & Setup](#mindsets)
-    - [Setup](#setup)
-    - [Entry Points](#entry-points)
-    - [State Transition Doc](#state-transition-doc)
+- [Part 1: Preparation & Setup](#part-1-preparation--setup-%EF%B8%8F)
+    - [Reminders](#1-reminders-)
+    - [Get Organized](#2-get-organized-)
+    - [Scan Documentation & README](#3-scan-the-docs-and-readme-)
 - [Part 2: System Overview](#mindsets)
 - [Part 3: Manual Review](#mindsets)
 - [Part 4: Bug Hunting](#mindsets)
@@ -38,7 +38,7 @@ Setup steps:
 - [ ] Create a new blank project in Whimsical
 - [ ] Clone the repo and compile
 
-### 3. Scan the Docs and README 👀
+### 3. Scan Documentation & README 👀
 - [ ] Quickly scan the documentation and README. The goal is NOT total understanding. Just get a lay of the land.
 
 ### 4. Entry Points ⬆️
