@@ -1,12 +1,11 @@
 # Audit Process
 
-## Intro
 When I was first getting into smart contract auditing, [watching Miletruck’s process](https://youtu.be/DySpPB3079k?si=2PON6jPrIIY_2pxa) was a game-changer. It gave me some structure around something that initially felt pretty opaque. I started by copying his approach, then tweaked it over time to fit my own style.
 
 Here’s what my audit process looks like now. I’m sharing publicly in case it helps other auditors. Whenever people drop tips about their process on Twitter, it’s been super helpful for me—so I figured I’d put mine out there too.
 
-**Table of Contents**:
-- [Mindsets](#mindsets)
+## Table of Contents
+- [Part 1: Preparation & Setup](#mindsets)
 - [Setup](#setup)
 - [Entry Points](#entry-points)
 - [State Transition Doc](#state-transition-doc)
@@ -50,7 +49,7 @@ Setup steps:
 - [ ] Run `forge inspect storageLayout ContractName` for each contract
 - [ ] Add each storage variable to the "State Transitions" Google Sheet
 
-Context: I spent many years building models in Excel, so visualizing the state of storage variables in a spreadsheet helps me significantly. I thought I was the only one doing this, but then I learned [Phil is a big fan of Excel modeling](https://x.com/philbugcatcher/status/1909428628015788501) and Obront built a big spreadsheet model during his Story Protocol win. There are probably many more of us Excel dorks out there...
+**Context**: I spent many years building models in Excel, so visualizing the state of storage variables in a spreadsheet helps me significantly. I thought I was the only one doing this, but then I learned [Phil is a big fan of Excel modeling](https://x.com/philbugcatcher/status/1909428628015788501) and Obront built a big spreadsheet model during his Story Protocol win. There are probably many more of us Excel dorks out there...
 
 ## Part 2: System Overview
 
@@ -75,9 +74,9 @@ For me, understanding a codebase has to happen top-down. If I don’t know what 
 
 By this point, I'll have flagged any concepts from the documentation or code that I’m not familiar with. Now is the time to fill in any of those knowledge gaps I have. For example, if a protocol implements call and put options and I don’t know how options work, I’ll researcher options.
 
-Whenever I learn something new for an audit, it's important that the new knowledge is accessible to me from memory. I don't want to have to look up concepts / definitions when I'm manually reviewing the code because it disrupts my flow and makes understanding more difficult.
+Whenever I learn something new for an audit, it's important that the new knowledge is accessible to me from memory. I don't want to have to look up concepts / definitions when I'm manually reviewing the code because it disrupts my flow, making me audit at a level lower than my potential.
 
-To lock in new concepts, I make flashcards in a spaced-repetition app called Mochi. Each morning during an audit, I review those cards so the info is fresh and accessible.
+To lock in new concepts, I make flashcards in a spaced-repetition app called Mochi. Each morning, I review those cards so the new concepts are fresh and accessible.
 
 ### Prepare a Testing Environment
 I learn best by doing. When I’m manually reviewing code, it really helps to have a Foundry test file ready so I can play around with different parts of the code:
@@ -87,28 +86,28 @@ Next, review the protocol's tests. Depending on what I see, either:
 - [ ] Plan on using the existing test suite for my own future tests, OR
 - [ ] Setup my own testing environment.
 
-A lot of this decision comes down to how much I trust the protocol’s test setup and how complex the deployment and state initialization are. If they’re using a bunch of mocks that strip away real complexity, I’ll usually spin up my own environment by forking the actual contracts they interact with. [This bug from the Plaza Finance contest on Sherlock](https://github.com/sherlock-audit/2024-12-plaza-finance-judging/issues/835) is a good example — it could've been caught by just running a forked test.
+A lot of this decision comes down to how much I trust the protocol’s test setup and how complex the deployment and state initialization are. If they’re using a bunch of mocks that strip away real complexity, I’ll usually spin up my own environment by forking the actual contracts they interact with. [This unique Medium from the Plaza Finance contest on Sherlock](https://github.com/sherlock-audit/2024-12-plaza-finance-judging/issues/835) is a good example — it could've been caught by just running a forked test.
 
 The other factor is time. Setting up my own environment is great for understanding how state gets initialized, but it can also eat up hours. If the deployment is too complex, it’s sometimes just not worth it.
 
 ## Part 3: Manual Review
-
-### Happy Pass
 Now that I've got a high-level overview of the system, I know how I'm going to want to approach the first pass of my manual review.
 
-Open the "Audit Tracker" document and being manually reviewing each contract and entry point. 
+### Happy Pass
 
-Notes:
--Always review the constructor / initializers first so I know how state is initialized
-- For each entry point, make sure to define what input parameter looks like. Use the protocol's test to find the "happy path" input values.
-- Audit in layers, making sure to write each internal / external call in the Audit Tracker to avoid distraction (create a document showing how to actual do this with some examples).
-- Use the following tags:
-  - @audit-issue when I find a bug
-  - @audit-check when there's some action item / task I'm assigning myself (e.g. attack ideas, questions I need to answer, etc.)
-  - @audit-info when there's an important piece of information about the code that I need to remember.
-  - @test when I want to test something in the playground or testing environment that will take longer than a minute or two to test.
-  - @complex when I notice an area where there's a lot of complexity that is likely to contain bugs. I'll usually tag external integrations as @complex as well.
-- When there are many state variables tracking lots of different things or state variables that are unintuitive, memorizing what they represent really helps as you get deeper into a codebase. Once I learn what a state variables represents, add the definition to the "Notes" document and then at the end of the day, create spaced repetition flashcards.
+Open the "Audit Tracker" doc and being the manual review:
+- [ ] Review the constructor / initializers to understand state initialization
+- [ ] Define all state variables. If any are non-intuitive, make flashcards for them.
+- [ ] For each entry point, define input parameters.
+    - Use the protocol's test to find "happy path" input params.
+    - When a function has many different code paths for different inputs, write them all down but only audit one path at a time.
+- [ ] Audit in layers.
+- [ ] Use the following tags:
+    - `@audit-issue`: Use to tag bugs
+    - `@audit-check`: Use to tag action items, tasks, attack ideas, or questions I need to answer.
+    - `@audit-info`: Use to tag important context about the code that I want to remember for future passes.
+    - `@test`: Use to tag portion of the code I want to test or fuzz later. If something takes less than 2 minutes to test, do it immediately.
+    - `@complex`: Use to tag areas where bugs are likely more common. Examples include fees, thresholds, external integration, complex branch logic, etc.
 - When a function has logic to handle many different inputs, pick an input, then go through the function only thinking about that input. Repeat this for every input. Notate each variation of input in the "Audit Tracker" first, then go through each one by one.
 - Once I finish going through an entry point, go back through, but only identifying when state is updated. Log these state updates in the state tracker so I can visually see how state is changing.
 
