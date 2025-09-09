@@ -62,7 +62,7 @@ Setup steps:
 - [ ] Run `forge inspect storageLayout ContractName` for each contract.
 - [ ] Add each storage variable to the `State Transitions` Google Sheet.
 
-> Visualizing storage variable state in a spreadsheet helps me a lot. I thought I was the only one doing this, but then I learned [Phil usees spreadsheets](https://x.com/philbugcatcher/status/1909428628015788501) and many others.
+> Visualizing storage variable state in a spreadsheet helps me a lot. I thought I was the only one doing this, but then I learned [Phil uses spreadsheets](https://x.com/philbugcatcher/status/1909428628015788501) and many others.
 
 ## Part 2: System Overview 💡
 
