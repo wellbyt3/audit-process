@@ -36,6 +36,7 @@ Before I start an audit, I like to remind myself of what I've learned from previ
 9. Don't do too much in your head. When things get complicated, rely on your tools (e.g. paper + pen, Foundry, spreadsheets, notes, etc.).
 10. When getting comfortable with a codebase, remember all a function can do is update state or returning a value. Zoom out before zooming in.
 11. Forked Contracts != Less Bugs
+12. Clear writing = Clear thinking. Take notes often. Anything critical, add to spaced repetition practice.
 
 ### 2. Get Organized 📁
 Spending 10 minutes to get organized at the start of an audit, saves many future hours.
