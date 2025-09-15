@@ -92,6 +92,8 @@ Whenever I learn something new for an audit, it's important that the new knowled
 
 To lock in new concepts, I make flashcards in a spaced-repetition app called [Mochi](https://mochi.cards/). Each morning, I review those cards so the new concepts are fresh and accessible.
 
+> TIP: Ask your LLM of choice, “Teach me X using Socratic tutoring. Do not move on until I've answered the question to your satisfaction.“
+
 ### 3. Prepare a Testing Environment 🧑‍💻
 I learn best by doing. When I’m manually reviewing code, it really helps to have a Foundry test file ready so I can play around with different parts of the code:
 - [ ] Create a Foundry test file called `wellbyt3-playground.t.sol` and setup a simple testing playground
