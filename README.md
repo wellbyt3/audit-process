@@ -71,8 +71,8 @@ Setup steps:
 The goal here is to understand _what_ the system is doing, but ignore any _how_ related details. 
 
 Using the "Core Flows" document:
-- [ ] For each contract, write 1-2 sentences explaining its purpose in the system.
-- [ ] For each entry point (function), write 1-2 sentences explaining it's purpose in the system. 
+- [ ] Go through each contract and determine how it fits into the system at a high-level
+- [ ] Review entrypoint functions and determine how they fit into the system
 
 > **IMPORTANT**: This is NOT a line-by-line pass through the code. Scan for things like fund transfers and how the different contracts interact. The goal is to understand what the system is designed to do at a high-level.
 
