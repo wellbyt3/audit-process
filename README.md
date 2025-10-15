@@ -86,7 +86,9 @@ If there are lots of contracts interacting, draw diagrams in Whimsical showing t
 ### 2. Fill in Knowledge Gaps 📚
 For me, understanding a codebase has to happen top-down. If I don’t know what it’s supposed to do or why it exists, the actual code won’t make much sense.
 
-By this point, I'll have flagged any concepts from the documentation or code that I’m not familiar with. Now is the time to fill in any of those knowledge gaps I have. For example, if a protocol implements call and put options, but I don’t know how options work, I’ll researcher options.
+By this point, I'll have flagged any concepts from the documentation or code that I’m not familiar with. Now is the time to fill in any of those knowledge gaps I have. For example, if a protocol implements call and put options, but I don’t know how options work, I’ll research options. While I'm learning, I'll take detailed notes on anything that's new to me.
+
+### 3. Spaced Repetition
 
 Whenever I learn something new for an audit, it's important that the new knowledge is accessible in memory. I don't want to have to look up concepts / definitions when I'm manually reviewing the code because it disrupts my flow, making me audit at a level lower than my potential.
 
