@@ -31,7 +31,7 @@ Before I start an audit, I like to remind myself of what I've learned from previ
 2. There's a difference between **_knowing of_** something versus **_understanding_** it. Be intellectually honest with yourself.
 3. Do NOT start a contest midway through unless you're 100% certain you'll be able to finish early. You never want to feel rushed.
 6. Treat yourself like a professional athlete during contests. Consistent bedtime, eat clean, workout, etc.
-7. Too much caffeine in the AM hurts producitvity. That second cup is not worth it.
+7. Too much caffeine in the AM hurts productivity. That second cup is not worth it.
 8. Creativity usually comes during idle time. Build idle time into each audit day.
 9. Don't do too much in your head. When things get complicated, rely on your tools (e.g. paper + pen, Foundry, spreadsheets, notes, etc.).
 10. When getting comfortable with a codebase, remember all a function can do is update state or returning a value. Zoom out before zooming in.
